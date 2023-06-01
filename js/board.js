@@ -84,7 +84,7 @@ function calcNegs(rowIdx, colIdx) {
 function addMines(coord) {
     var mines = getRandomCoord(coord, gLvl.MINES)
     // debugger
-    // console.log(mines)
+    console.log(mines)
     for (let k = 0 ; k < mines.length ; k++) {
         var coord = mines[k]
         gBoard[coord.i][coord.j].isMine = true
@@ -92,26 +92,41 @@ function addMines(coord) {
 }
 
 function getRandomCoord(coord, numOfPos = 1) {
-    // console.log('coord', coord)
-	var rowIdx, colIdx
 	var emptyPositions = []
-
-	if (numOfPos <= 0) {
+    var boardPosDuplicate = []
+    // console.log('coord', coord)
+    if (numOfPos <= 0) {
         console.log('numOfPos should be at least 1');
         return null
     }
+    // var emptyPoss = [{i:0,j:0} , {i:0,j:1}]
+    for (var i = 0; i < gBoard.length ; i++) {
+        for (var j = 0; j < gBoard.length ; j++) {
+			// console.log(i , j)
+            var cell = gBoard[i][j]
+            // console.log('cell:', cell)
+            if (coord.i !== i || coord.j !== j) {
+                var pos = {
+                    i: i,
+                    j: j
+                }
+                // console.log('pos:', pos)
+                boardPosDuplicate.push(pos)
+            }
 
-	for (let k = 0 ; k < numOfPos ; k++) {
-		rowIdx = getRandomInt(0, gLvl.SIZE)
-		colIdx = getRandomInt(0, gLvl.SIZE)
-        if (coord.i === rowIdx, coord.j === colIdx) {
-            k--
-            continue
         }
-		emptyPositions.push({i: rowIdx, j: colIdx})
-		if (numOfPos === 1) return emptyPositions[0]
-		// return as an obj
-	}
+    }
+    // console.log('boardPosDuplicate', boardPosDuplicate);
+
+    if (numOfPos === 1) {
+        return boardPosDuplicate[getRandomInt(0, boardPosDuplicate.length)]
+    }
+
+    // for more than one random pos
+    for (let i = 0 ; i < gLvl.MINES ; i++) {
+        var index = getRandomInt(0, boardPosDuplicate.length)
+        emptyPositions.push(boardPosDuplicate.splice(index, 1)[0])
+    }
+    // console.log('emptyPoss:', emptyPoss)
 	return emptyPositions
-	// return as an array of obj
 }

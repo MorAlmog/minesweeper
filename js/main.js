@@ -37,6 +37,8 @@ function initParameters(size, mines) {
     }
     gIsFirstClick = false
     gBoard = []
+    stopTimer()
+    document.getElementById('timer').innerText = gGame.secPassed
     
     document.querySelector('.game-emoji').innerText = SMILE
     document.querySelector('.mines-guess').innerText = mines
