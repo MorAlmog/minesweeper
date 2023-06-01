@@ -1,0 +1,97 @@
+/* TODO - fix mine picture */
+
+:root {
+    --size: 15px;
+}
+
+* {
+    text-align: center;
+    margin: auto;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h {
+    font-size: 7px;
+}
+
+table,
+tr,
+td {
+    border: 1px solid rgb(60,69,79);
+    border-collapse: collapse;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+img {
+    max-width: var(--size);
+}
+
+td {
+    width: var(--size);
+    height: var(--size);
+    background-color: rgb(205,213,243);
+    cursor: pointer;
+}
+
+.shown {
+    max-width: var(--size);
+    max-height: var(--size);
+    background-color: rgb(174, 186, 218);
+    /* background-color: rgb(204,215,243); */
+    cursor: default;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden */
+}
+
+/* .shown img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+} */
+
+
+button {
+    cursor: pointer;
+}
+
+#timer, 
+.timer-container {
+    background-color: rgba(204,215,243);
+    font-family:'Courier New', Courier, monospace;
+    font-size: 10px;
+    width: calc(var(--size)*3);
+    height: calc(var(--size));
+}
+
+#timer {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+}
+
+.num1 {
+    color:rgb(26, 122, 218);
+}
+.num2 {
+    color: green;
+}
+.num3 {
+    color: red;
+}
+.num4 {
+    color:darkblue;
+}
+.num5 {
+    color: darkred;
+}
+.num6 {
+    color:darkcyan;
+}
+.num7 {
+    color:brown;
+}
+.num8 {
+    color: black;
+}

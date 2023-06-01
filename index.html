@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="onInit()">
+
+    </br>
+    <h class="game-emoji">😊</h>
+    </br>
+    <h>Mines left to mark: <span class="mines-guess"></span> | Exposed tiles: <span class="tiles-exposed"></span></h>
+    </br>
+    <table>
+        <tbody class="board"></tbody>
+    </table>
+    <div class="heart-container">
+        <h><span id="life0">❤️</span><span id="life1">❤️</span><span id="life2">❤️</span></h>
+    </div>
+    </br>
+    <div class="timer-container">⏲️  <span id="timer"></span></div>
+    </br>
+    <div class="button-container">
+        <button onclick="onInit(4, 2)">easy</button>
+        <button onclick="onInit(8, 14)">medium</button>
+        <button onclick="onInit(12, 32)">hard</button>
+    </div>
+    <script src="js/main.js"></script>  
+    <script src="js/board.js"></script>  
+    <script src="js/util.js"></script>  
+    <script src="js/timer.js"></script>  
+</body>
+</html>
