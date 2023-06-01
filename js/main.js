@@ -1,5 +1,5 @@
 'use strict'
-// 4, 2 -- 8, 14 -- 12, 32
+// not done yet!
 // TODO - clean img inside td and make it fill the div (shron's lec)
 // TODO easy medium hard option
 
@@ -41,6 +41,7 @@ function initParameters(size, mines) {
     document.querySelector('.game-emoji').innerText = SMILE
     document.querySelector('.mines-guess').innerText = mines
     document.querySelector('.tiles-exposed').innerText = '0'
+    document.querySelector('.restart-container').innerHTML = ''
 
     for (gLives = 0 ; gLives < MAX_LIVES ; gLives++) {
         document.querySelector(`#life${gLives}`).innerText = FULL_HEART
@@ -157,15 +158,20 @@ function checkGameOver() {
     // var allShownNum = gLvl.SIZE*gLvl.SIZE - gLvl.MINES
     if (((gGame.markedCount + gGame.shownCount - gLives) === gLvl.SIZE*gLvl.SIZE) && gGame.isOn && gLvl.MINES - gGame.markedCount >= 0) {
         document.querySelector('.game-emoji').innerText = WON_GAME
-        gGame.isOn = false
-        stopTimer()
+        gameOver()
         // TODO add winning annimation
     }
     else if (gLives === 3) {
         document.querySelector('.game-emoji').innerText = DEAD
-        gGame.isOn = false
-        stopTimer()
+        gameOver()
     }
+}
+
+function gameOver() {
+    gGame.isOn = false
+    stopTimer()
+    var elBtn = document.querySelector('.restart-container')
+    elBtn.innerHTML = `</br><button onclick="onInit(${gLvl.SIZE}, ${gLvl.MINES})">restart</button>`
 }
 
 function showCell(board, elCell, i, j) {

@@ -2,16 +2,24 @@
 
 :root {
     --size: 30px;
+    --font-size: 20px;
 }
 
 * {
+    margin-top: 20px;
     text-align: center;
     margin: auto;
     font-family: 'Courier New', Courier, monospace;
 }
 
+body {
+    background-image: url("../src/background.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
 h {
-    font-size: 20px;
+    font-size: var(--font-size);
 }
 
 table,
@@ -19,7 +27,7 @@ tr,
 td {
     border: 1px solid rgb(60,69,79);
     border-collapse: collapse;
-    font-size: 20px;
+    font-size: var(--font-size);
     font-weight: bold;
 }
 
@@ -55,21 +63,21 @@ td {
 
 button {
     cursor: pointer;
-    font-size: 20px;
+    font-size: var(--font-size);
 }
 
 #timer, 
 .timer-container {
     background-color: rgba(204,215,243);
     font-family:'Courier New', Courier, monospace;
-    font-size: 20px;
+    font-size: var(--font-size);
     width: calc(var(--size)*3);
     height: calc(var(--size));
 }
 
 #timer {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
+    font-size: var(--font-size);
 }
 
 .num1 {
