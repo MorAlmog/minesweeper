@@ -104,3 +104,11 @@ button {
 .num8 {
     color: black;
 }
+
+footer {
+    font-size: 13px;
+    position: fixed;
+    left: 0;
+    bottom: 7px;
+    width: 100%;
+}
