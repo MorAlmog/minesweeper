@@ -1,7 +1,7 @@
 /* TODO - fix mine picture */
 
 :root {
-    --size: 15px;
+    --size: 30px;
 }
 
 * {
@@ -11,7 +11,7 @@
 }
 
 h {
-    font-size: 7px;
+    font-size: 20px;
 }
 
 table,
@@ -19,7 +19,7 @@ tr,
 td {
     border: 1px solid rgb(60,69,79);
     border-collapse: collapse;
-    font-size: 10px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -55,20 +55,21 @@ td {
 
 button {
     cursor: pointer;
+    font-size: 20px;
 }
 
 #timer, 
 .timer-container {
     background-color: rgba(204,215,243);
     font-family:'Courier New', Courier, monospace;
-    font-size: 10px;
+    font-size: 20px;
     width: calc(var(--size)*3);
     height: calc(var(--size));
 }
 
 #timer {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 10px;
+    font-size: 20px;
 }
 
 .num1 {
