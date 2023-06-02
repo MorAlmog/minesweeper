@@ -66,18 +66,25 @@ button {
     font-size: var(--font-size);
 }
 
-#timer, 
 .timer-container {
-    background-color: rgba(204,215,243);
+
     font-family:'Courier New', Courier, monospace;
     font-size: var(--font-size);
+    /* font-weight: bold; */
+    /* color: #eee; */
     width: calc(var(--size)*3);
     height: calc(var(--size));
+    margin-left: 2%;
 }
 
-#timer {
-    font-family: 'Courier New', Courier, monospace;
+.heart-container{
+    font-family:'Courier New', Courier, monospace;
     font-size: var(--font-size);
+    /* font-weight: bold; */
+    /* color: #eee; */
+    width: calc(var(--size)*3);
+    height: calc(var(--size));
+    margin-right: 2%;
 }
 
 .num1 {

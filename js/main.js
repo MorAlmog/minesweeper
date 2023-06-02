@@ -1,7 +1,4 @@
 'use strict'
-// not done yet!
-// TODO - clean img inside td and make it fill the div (shron's lec)
-// TODO easy medium hard option
 
 var  gGame = {
     isOn: true,
@@ -105,7 +102,7 @@ function expandShown(board, elCell, rowIdx, colIdx) {
             // if is out of range
             if (i === rowIdx && j === colIdx) continue
             // if currCell is root cell
-            if (board[i][j].isShown) continue
+            if (board[i][j].isShown || board[i][j].isMarked) continue
             // if currcell is already shown
 
             var currElCell = document.querySelector(`[data-i="${i}"][data-j="${j}"]`)
@@ -132,11 +129,11 @@ function onCellMarked(ev) {
     if (!gGame.isOn) return
     if (gBoard[i][j].isShown) return
 
-    if (!gIsFirstClick) {
-    // set timer on if isFirstClick
-        gIsFirstClick = true
-        startTimer()
-    }
+    // if (!gIsFirstClick) {
+    // // set timer on if isFirstClick
+    //     gIsFirstClick = true
+    //     startTimer()
+    // }
     
     // toggle isMarked
     gBoard[i][j].isMarked = !gBoard[i][j].isMarked
