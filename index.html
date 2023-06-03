@@ -8,29 +8,60 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body onload="onInit()">
-
         </br>
         <h class="game-emoji">😊</h>
         </br>
+        </br>
         <h>mines: <span class="mines-guess"></span> | tiles: <span class="tiles-exposed"></span></h>
+        </br>
         </br>
         <table>
             <tbody class="board"></tbody>
         </table>
+        </br>
         <h class="heart-container"><span id="life0">❤️</span><span id="life1">❤️</span><span id="life2">❤️</span></h>
         <h class="button-container">⏲️ <span id="timer"></span></h>
-
+        </br></br>
         <div class="button-container">
             <button onclick="onInit(4, 2)">easy</button>
             <button onclick="onInit(8, 14)">medium</button>
             <button onclick="onInit(12, 32)">hard</button>
         </div>
         <div class="restart-container"></div>
+        </br>
+        <!-- TODO: fix grid so they are all in a row and not in cols -->
+        <button title="menu" class="menu-button" onclick="openMenuModal()"></button>
+        <div hidden class="menu">
+            <button class="btn-close" onclick="hideMenuDetails()">x</button>
+            <div class="hints-container">
+                <h class="hints">Hints:</h>
+                <img class="img-hint" onclick="onUseHint(this)" src="src/bulb.png">
+                <img class="img-hint" onclick="onUseHint(this)" src="src/bulb.png">
+                <img class="img-hint" onclick="onUseHint(this)" src="src/bulb.png">
+            </div>
+            <div class="safe-clicks-container">
+                <h>Safe-Clicks:</h>
+                <img class="safe-click" onclick="onUseSafeClick(this)" src="src/safe-click.png">
+                <img class="safe-click" onclick="onUseSafeClick(this)" src="src/safe-click.png">
+                <img class="safe-click" onclick="onUseSafeClick(this)" src="src/safe-click.png">
+            </div>
+            <div class="mega-hint-container">
+                <h>Mega-Hint:</h>
+                <img class="mega-hint" class="img-hint" onclick="onUseMegaHint(this)"" src="src/mega-bulb.gif">
+            </div>
+
+            <div class="exter-container">
+                <h>Exterminator:</h>
+                <img class="exter-click" onclick="onExterminator()" src="src/exterminate.png">
+            </div>
+            
+        </div>
 
     <script src="js/main.js"></script>  
     <script src="js/board.js"></script>  
     <script src="js/util.js"></script>  
     <script src="js/timer.js"></script>
-    <footer>🧚‍♀️ A huge thanks to Guy, Tal and Tal🧚‍♀️</footer> 
+    <script src="js/bonus.js"></script>
+    <footer>🧚‍♀️ A huge thanks to Tal, Guy and Tal🧚‍♀️</footer> 
 </body>
 </html>

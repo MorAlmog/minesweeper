@@ -20,6 +20,11 @@ body {
 
 h {
     font-size: var(--font-size);
+    color: rgba(71,70,111,255);
+}
+
+span {
+    color: rgba(71,70,111,255);
 }
 
 table,
@@ -31,7 +36,7 @@ td {
     font-weight: bold;
 }
 
-img {
+.mine-img {
     max-width: var(--size);
 }
 
@@ -64,6 +69,10 @@ td {
 button {
     cursor: pointer;
     font-size: var(--font-size);
+    background-color: rgb(205,213,243);
+    border-color: rgb(124,122,164);
+    color: rgba(71,70,111,255);
+    /* border-style:outset; */
 }
 
 .timer-container {
@@ -87,29 +96,29 @@ button {
     margin-right: 2%;
 }
 
-.num1 {
-    color:rgb(26, 122, 218);
-}
-.num2 {
-    color: green;
-}
-.num3 {
-    color: red;
-}
-.num4 {
-    color:darkblue;
-}
-.num5 {
-    color: darkred;
-}
-.num6 {
-    color:darkcyan;
+.num8 {
+    color: black;
 }
 .num7 {
     color:brown;
 }
-.num8 {
-    color: black;
+.num6 {
+    color:darkcyan;
+}
+.num5 {
+    color: darkred;
+}
+.num4 {
+    color:darkblue;
+}
+.num3 {
+    color: red;
+}
+.num2 {
+    color: green;
+}
+.num1 {
+    color:rgb(26, 122, 218);
 }
 
 footer {
@@ -118,4 +127,84 @@ footer {
     left: 0;
     bottom: 7px;
     width: 100%;
+}
+
+.menu-button {
+    /* margin-right: 100%; */
+    /* font-size: 15px; */
+    background-image: url("../src/button-mine.jpg");
+    background-size:cover;
+    /* border: none; */
+    background-color: rgb(205,213,243);
+    border-color: rgb(124,122,164);
+    height: 35px;
+    width: 35px;
+}
+
+.menu {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    left: 20px;
+    top: 20px;
+    display:flex;
+    align-items:center;
+    /* height: 150px;
+    width: 100px; */
+    border-radius: 5% / 12%;
+
+    background-color: rgb(143,170,220);
+    /* background-color: rgba(92,94,139,255); */
+    /* background-color: rgb(174, 186, 218); */
+    /* background-color: rgb(143, 170, 220); */
+    /* background-color: rgb(167, 168, 214); */
+    padding: 20px;
+    visibility: hidden;
+}
+
+.menu * {
+    margin: auto 0;
+}
+
+.menu h {
+    font-size: 17px;
+    color: #eee;
+}
+
+.menu div {
+    clear:both;
+    display: grid;
+    position: flex;
+}
+
+.mega-hint {
+    left: 1000px;
+    top: 500px;
+}
+
+.menu .btn-close {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    font-size: 12px;
+
+    background-color: transparent;
+    border: 1px solid #eee;
+    border-radius: 20%;
+    color: #eee;
+}
+
+.img-hint,
+.mega-hint,
+.safe-click,
+.exter-click {
+    height: 45px;
+    cursor: pointer;
+}
+
+.mega-hint-chosen,
+.safe-to-click {
+    background-color: rgb(143,170,220);
 }

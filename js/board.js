@@ -3,7 +3,6 @@ var gLvl = {
     SIZE: 4,
     MINES: 2
 }
-const MINE_IMG = '<img src="src/mine3.png">'
 const FLAG_EMOJI = '🏴‍☠️'
 const EMPTY = ''
 
@@ -25,9 +24,9 @@ function renderBoard() {
     for (var i = 0 ; i < gLvl.SIZE ; i++) {
         strHTML += '<tr>'
         for (var j = 0 ; j < gLvl.SIZE ; j++) {
-            strHTML += `<td 
+            strHTML += `<td src=""
             data-i="${i}" data-j="${j}"
-            onclick="onCellClicked(this, ${i}, ${j})"
+            onclick="onCellClicked(this)"
             oncontextmenu="onCellMarked(event)"
             onmousedown="replaceFace(event, ${i}, ${j})"
             onmouseup="returnFace(event, ${i}, ${j})">
@@ -84,7 +83,7 @@ function calcNegs(rowIdx, colIdx) {
 function addMines(coord) {
     var mines = getRandomCoord(coord, gLvl.MINES)
     // debugger
-    console.log(mines)
+    // console.log(mines)
     for (let k = 0 ; k < mines.length ; k++) {
         var coord = mines[k]
         gBoard[coord.i][coord.j].isMine = true

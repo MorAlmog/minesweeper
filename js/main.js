@@ -1,4 +1,6 @@
 'use strict'
+// not done yet!
+// TODO - clean img inside td and make it fill the div (shron's lec)
 
 var  gGame = {
     isOn: true,
@@ -14,13 +16,18 @@ var gIsFirstClick = false
 
 
 const   SMILE = '😊', AWAITING_DOOM = '😮',
-        DEAD = '☠️', WON_GAME = '😎'
+        DEAD = '😵', WON_GAME = '😎'
 const   FULL_HEART = '❤️', EMPTY_HEART = '🤍'
+// const MINE_IMG = '<img class="mine-img" src="src/mine3.png">'
+// HELLO THERE DEAR TUTOR - for some reason mines aren't always shown when using regular hints. no idea why.
+// I will forever owe you if you can find out why
+const MINE_EMOJI = '☠️'
 
 function onInit(size = gLvl.SIZE, mines = gLvl.MINES) {
     initParameters(size, mines)
     buildEmptyBoard()
     renderBoard()
+    initBonuses()
 }
 
 function initParameters(size, mines) {
@@ -48,9 +55,9 @@ function initParameters(size, mines) {
     gLives = 0
 }
 
-function onCellClicked(elCell, i, j) {
-    i = +i
-    j = +j
+function onCellClicked(elCell) {
+    var i = +elCell.dataset.i
+    var j = +elCell.dataset.j
 
     if (!gGame.isOn) return
     if (gBoard[i][j].isShown) return
@@ -66,7 +73,7 @@ function onCellClicked(elCell, i, j) {
         startTimer()
     }
 
-    showCell(gBoard, elCell, i, j)
+    exposeCell(gBoard, elCell, i, j)
     // i, j of type number
 }
 
@@ -106,7 +113,7 @@ function expandShown(board, elCell, rowIdx, colIdx) {
             // if currcell is already shown
 
             var currElCell = document.querySelector(`[data-i="${i}"][data-j="${j}"]`)
-            showCell(board, currElCell, i, j)
+            exposeCell(board, currElCell, i, j)
 
             if (board[i][j].minesAroundCount === 0) {
                 expandShown(board, currElCell, i, j)
@@ -154,6 +161,7 @@ function onCellMarked(ev) {
 }
 
 function checkGameOver() {
+    // debugger
     // var allShownNum = gLvl.SIZE*gLvl.SIZE - gLvl.MINES
     if (((gGame.markedCount + gGame.shownCount - gLives) === gLvl.SIZE*gLvl.SIZE) && gGame.isOn && gLvl.MINES - gGame.markedCount >= 0) {
         document.querySelector('.game-emoji').innerText = WON_GAME
@@ -173,10 +181,10 @@ function gameOver() {
     elBtn.innerHTML = `</br><button onclick="onInit(${gLvl.SIZE}, ${gLvl.MINES})">restart</button>`
 }
 
-function showCell(board, elCell, i, j) {
+function exposeCell(board, elCell, i, j) {
     if (board[i][j].isMine) {
         gGame.markedCount++
-        elCell.innerHTML = MINE_IMG
+        elCell.innerText = MINE_EMOJI
         document.querySelector(`#life${gLives}`).innerText = EMPTY_HEART
         gLives++
         document.querySelector('.mines-guess').innerText = (gLvl.MINES - gGame.markedCount).toString()
