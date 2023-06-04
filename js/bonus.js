@@ -1,16 +1,16 @@
-const BULB = "../src/bulb.png", BULB_OFF = "../src/bulb-off.png"
-const MEGA_BULB = "../src/mega-bulb.gif", MEGA_BULB_OFF = "../src/mega-bulb-off.png"
-const SAFE_CLICK = "../src/safe-click.png", SAFE_CLICK_OFF = "../src/safe-click-off.png"
+const BULB = "src/bulb.png", BULB_OFF = "src/bulb-off.png"
+const MEGA_BULB = "src/mega-bulb.gif", MEGA_BULB_OFF = "src/mega-bulb-off.png"
+const SAFE_CLICK = "src/safe-click.png", SAFE_CLICK_OFF = "src/safe-click-off.png"
 const SEC = 1000
-const DALEK_OFF = "../src/exterminate-off.png"
+const DALEK_OFF = "src/exterminate-off.png"
 
 var gQuad = []
 var gBlinkInterval
 
 // const MINE_IM = '<a href="#"><img class="mine-img" src="src/mine3.png"></a>'
 
-// added features: hints, mega hint, safe click, 
-// TODO - best score, manually positioned mines, undo, dark mode, mine exterminator, win+lose animation 
+// added features: hints, mega hint, safe click, dalek
+// TODO - best score, manually positioned mines, undo, dark mode, win+lose animation 
 
 // possible bug - onHint doesn't always show MINE_IMG - no idea why
 
@@ -247,7 +247,7 @@ function blink(elCell) {
 
 function onExterminator() {
     if (!gIsFirstClick) return
-    const audio = new Audio("../src/exterminate.mp3")
+    const audio = new Audio("src/exterminate.mp3")
     audio.play()
     const dalek = document.querySelector('.exter-click')
     dalek.src = DALEK_OFF
