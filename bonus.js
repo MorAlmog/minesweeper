@@ -1,8 +1,8 @@
-const BULB = "../src/bulb.png", BULB_OFF = "../src/bulb-off.png"
-const MEGA_BULB = "./src/mega-bulb.gif", MEGA_BULB_OFF = "./src/mega-bulb-off.png"
-const SAFE_CLICK = "./src/safe-click.png", SAFE_CLICK_OFF = "./src/safe-click-off.png"
+const BULB = "src/bulb.png", BULB_OFF = "src/bulb-off.png"
+const MEGA_BULB = "src/mega-bulb.gif", MEGA_BULB_OFF = "src/mega-bulb-off.png"
+const SAFE_CLICK = "src/safe-click.png", SAFE_CLICK_OFF = "src/safe-click-off.png"
 const SEC = 1000
-const DALEK_OFF = "./src/exterminate-off.png"
+const DALEK_OFF = "src/exterminate-off.png"
 
 var gQuad = []
 var gBlinkInterval
